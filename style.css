@@ -451,6 +451,10 @@ body {
   animation-delay: 0.6s;
 }
 
+.delay-5 {
+  animation-delay: 0.75s;
+}
+
 @keyframes slideUpFade {
   to {
     opacity: 1;
@@ -537,6 +541,22 @@ body {
     text-align: center;
     gap: 0.8rem;
   }
+
+  .sns-card {
+    padding: 1.2rem;
+    gap: 1rem;
+  }
+
+  .sns-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+  }
+
+  .sns-icon svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 /* ==========================================
@@ -568,4 +588,102 @@ body {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
 }
+
+/* ==========================================
+   8. SNS・リンクスタイル
+   ========================================== */
+.sns-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.sns-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(30, 41, 59, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+.sns-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: var(--transition-smooth);
+}
+
+.sns-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.sns-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.sns-name {
+  font-family: var(--font-english);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: 0.05em;
+}
+
+.sns-desc {
+  font-size: 0.9rem;
+  color: var(--text-sub);
+  line-height: 1.6;
+}
+
+.sns-arrow {
+  flex-shrink: 0;
+  color: var(--text-sub);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition-smooth);
+}
+
+.sns-arrow svg {
+  width: 20px;
+  height: 20px;
+  transition: var(--transition-smooth);
+}
+
+/* ホバー時のインタラクティブエフェクト */
+.sns-card:hover {
+  background: rgba(30, 41, 59, 0.5);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15);
+  transform: translateY(-3px);
+}
+
+.sns-card:hover .sns-arrow {
+  color: #10b981;
+}
+
+.sns-card:hover .sns-arrow svg {
+  transform: translateX(5px);
+}
+
+.sns-card:hover .sns-icon {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+
 
