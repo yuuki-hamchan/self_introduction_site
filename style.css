@@ -88,7 +88,7 @@ body {
 /* 3. レイアウトコンテナ */
 .main-container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -318,7 +318,7 @@ body {
 /* 趣味セクション */
 .hobby-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: 0.5rem;
 }
@@ -368,7 +368,7 @@ body {
 /* 好きな食べ物セクション */
 .food-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: 0.5rem;
 }
@@ -492,15 +492,16 @@ body {
     padding: 2rem;
   }
 
-  .hobby-grid, .food-grid, .activity-grid {
-    grid-template-columns: 1fr; /* 1カラムにする */
-    gap: 1.2rem;
+  .hobby-grid, .food-grid {
+    grid-template-columns: 1fr; /* 縦並びにする */
+    gap: 1rem;
   }
 
   .hobby-card, .food-card {
-    padding: 1.8rem;
-    flex-direction: row;
+    padding: 1.5rem;
+    flex-direction: row; /* 横並びにしてコンパクトにする */
     text-align: left;
+    align-items: center;
     gap: 1.2rem;
   }
 
@@ -509,15 +510,8 @@ body {
     margin-bottom: 0;
   }
 
-  .btn-inner {
-    flex-direction: row; /* 横並びにする */
-    padding: 1.2rem 2rem;
-    justify-content: flex-start;
-    gap: 1.5rem;
-  }
-  
-  .btn-icon {
-    font-size: 1.6rem;
+  .hobby-desc, .food-desc {
+    margin-top: 0.2rem;
   }
 
   .point-item:hover {
