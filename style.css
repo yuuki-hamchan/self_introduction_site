@@ -1,0 +1,539 @@
+/* ==========================================
+   自己紹介ページ用スタイルシート (style.css)
+   デザインテーマ：未来的・デジタルグラスモーフィズム
+   ========================================== */
+
+/* 1. 基本設定・リセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* 未来的なサイバー・デジタル配色パレット */
+  --bg-gradient: linear-gradient(135deg, #070B19 0%, #0F172A 50%, #050510 100%);
+  --text-main: #F8FAFC;      /* クリーンなホワイト */
+  --text-sub: #94A3B8;       /* ブルーグレーのサブテキスト */
+  --card-bg: rgba(15, 23, 42, 0.65); /* 暗い半透明（グラスモーフィズム） */
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.37); /* 暗めの影 */
+  --primary-color: #00f2fe;   /* ネオンサイアン */
+  --secondary-color: #7f60ff; /* ネオンパープル */
+  --accent-color: #ff007f;    /* ネオンピンク */
+  --font-japanese: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-english: 'Space Grotesk', 'Orbitron', sans-serif;
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* なめらかなアニメーション */
+}
+
+body {
+  font-family: var(--font-japanese);
+  color: var(--text-main);
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  min-height: 100vh;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+/* 2. 背景のデジタルネオンサークル */
+.bg-circles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.4;
+}
+
+.circle-1 {
+  width: 400px;
+  height: 400px;
+  background-color: rgba(0, 242, 254, 0.2); /* ネオンサイアン */
+  top: 5%;
+  left: -100px;
+}
+
+.circle-2 {
+  width: 450px;
+  height: 450px;
+  background-color: rgba(127, 96, 255, 0.2); /* ネオンパープル */
+  bottom: 5%;
+  right: -150px;
+}
+
+.circle-3 {
+  width: 300px;
+  height: 300px;
+  background-color: rgba(255, 0, 127, 0.12); /* ネオンピンク */
+  top: 45%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+
+/* 3. レイアウトコンテナ */
+.main-container {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* 4. コンポーネントスタイル */
+
+/* カードの基本設定（グラスモーフィズム調） */
+.profile-card, .section {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition-smooth);
+}
+
+.profile-card:hover, .section:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 242, 254, 0.25);
+  box-shadow: 0 12px 40px rgba(0, 242, 254, 0.1);
+}
+
+/* ヘッダー・プロフィールカード */
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* サイバー装飾用のインジケーターバー */
+.profile-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+}
+
+.profile-image-wrapper {
+  flex-shrink: 0;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
+  background: #1e293b;
+  border: 2px solid var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-placeholder {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.role-badge {
+  font-family: var(--font-english);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  background-color: rgba(0, 242, 254, 0.1);
+  padding: 0.25rem 0.8rem;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 242, 254, 0.3);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.profile-name {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.2;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.profile-nickname {
+  font-size: 1.05rem;
+  color: var(--secondary-color);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-top: -0.2rem;
+}
+
+.profile-title {
+  font-size: 1.1rem;
+  color: var(--text-sub);
+  font-weight: 500;
+}
+
+/* セクション共通 */
+.section-title {
+  font-family: var(--font-english);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1.8rem;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* タイトルの下線（デジタルグラデーションバー） */
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
+}
+
+/* 自己紹介セクション */
+.intro-text {
+  font-size: 1.05rem;
+  color: var(--text-main);
+  text-align: justify;
+  line-height: 1.9;
+}
+
+/* デジタル化・改善ポイントリスト */
+.profile-points {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+}
+
+.point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  background: rgba(30, 41, 59, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  padding: 1.2rem;
+  transition: var(--transition-smooth);
+}
+
+.point-item:hover {
+  background: rgba(30, 41, 59, 0.55);
+  border-color: rgba(0, 242, 254, 0.3);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.08);
+  transform: translateX(4px);
+}
+
+.point-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: rgba(0, 242, 254, 0.1);
+  color: var(--primary-color);
+  border: 1px solid rgba(0, 242, 254, 0.25);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.1);
+}
+
+.point-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* PC以外のアイコン用カラー */
+.point-item:nth-child(2) .point-icon {
+  background: rgba(127, 96, 255, 0.1);
+  color: var(--secondary-color);
+  border-color: rgba(127, 96, 255, 0.25);
+  box-shadow: 0 0 10px rgba(127, 96, 255, 0.1);
+}
+
+.point-item:nth-child(3) .point-icon {
+  background: rgba(255, 0, 127, 0.1);
+  color: var(--accent-color);
+  border-color: rgba(255, 0, 127, 0.25);
+  box-shadow: 0 0 10px rgba(255, 0, 127, 0.1);
+}
+
+.point-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.point-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: 0.05em;
+}
+
+.point-desc {
+  font-size: 0.9rem;
+  color: var(--text-sub);
+  line-height: 1.6;
+}
+
+/* 趣味セクション */
+.hobby-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.hobby-card {
+  background: rgba(30, 41, 59, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  padding: 2rem 1.2rem;
+  text-align: center;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  cursor: pointer;
+}
+
+.hobby-card:hover {
+  transform: translateY(-5px);
+  background: rgba(30, 41, 59, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#hobby-camp:hover {
+  border-color: rgba(0, 242, 254, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 242, 254, 0.15);
+}
+
+#hobby-bike:hover {
+  border-color: rgba(127, 96, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(127, 96, 255, 0.15);
+}
+
+#hobby-book:hover {
+  border-color: rgba(255, 0, 127, 0.4);
+  box-shadow: 0 10px 30px rgba(255, 0, 127, 0.15);
+}
+
+.hobby-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hobby-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.hobby-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: 0.05em;
+}
+
+.hobby-desc {
+  font-size: 0.88rem;
+  color: var(--text-sub);
+  line-height: 1.7;
+}
+
+/* フッター */
+.main-footer {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.copyright {
+  font-family: var(--font-english);
+  font-size: 0.8rem;
+  color: var(--text-sub);
+  letter-spacing: 0.08em;
+}
+
+/* 5. アニメーション設定 */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.15s;
+}
+
+.delay-2 {
+  animation-delay: 0.3s;
+}
+
+.delay-3 {
+  animation-delay: 0.45s;
+}
+
+@keyframes slideUpFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 6. レスポンシブ対応 (メディアクエリ) */
+
+/* タブレット・スマートフォン向け (最大幅: 768px) */
+@media (max-width: 768px) {
+  body {
+    padding: 1.5rem 1rem;
+  }
+
+  .profile-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+
+  .profile-card::before {
+    width: 100%;
+    height: 4px;
+    top: 0;
+    left: 0;
+  }
+
+  .profile-info {
+    align-items: center;
+  }
+
+  .profile-name {
+    font-size: 1.8rem;
+  }
+
+  .section {
+    padding: 2rem;
+  }
+
+  .hobby-grid {
+    grid-template-columns: 1fr; /* 縦並びにする */
+    gap: 1rem;
+  }
+
+  .hobby-card {
+    padding: 1.5rem;
+    flex-direction: row; /* 横並びにしてコンパクトにする */
+    text-align: left;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  .hobby-icon {
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+
+  .hobby-desc {
+    margin-top: 0.2rem;
+  }
+
+  .point-item:hover {
+    transform: none; /* モバイルではホバー時の横ズレを抑制 */
+  }
+}
+
+/* 小型スマートフォン向け (最大幅: 480px) */
+@media (max-width: 480px) {
+  .hobby-card {
+    flex-direction: column; /* 非常に幅が狭い場合は縦並びに戻す */
+    text-align: center;
+    gap: 0.8rem;
+  }
+
+  .hobby-icon {
+    margin-bottom: 0.2rem;
+  }
+
+  .point-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.8rem;
+  }
+}
+
+/* ==========================================
+   7. トースト通知スタイル (JavaScript連動)
+   ========================================== */
+.toast-notification {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+  max-width: 90%;
+  width: auto;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.toast-notification.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
