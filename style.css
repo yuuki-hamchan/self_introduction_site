@@ -465,16 +465,22 @@ body {
 /* 6. レスポンシブ対応 (メディアクエリ) */
 
 /* タブレット・スマートフォン向け (最大幅: 768px) */
+/* タブレット・スマートフォン向け (最大幅: 768px) */
 @media (max-width: 768px) {
   body {
     padding: 1.5rem 1rem;
   }
 
+  /* コンテナの間隔を調整 */
+  .main-container {
+    gap: 1.5rem;
+  }
+
   .profile-card {
     flex-direction: column;
     text-align: center;
-    padding: 2rem;
-    gap: 1.5rem;
+    padding: 1.75rem 1.5rem;
+    gap: 1.2rem;
   }
 
   .profile-card::before {
@@ -486,14 +492,24 @@ body {
 
   .profile-info {
     align-items: center;
+    gap: 0.5rem;
   }
 
   .profile-name {
     font-size: 1.8rem;
   }
 
+  .profile-title {
+    font-size: 1rem;
+  }
+
   .section {
-    padding: 2rem;
+    padding: 1.75rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+    margin-bottom: 1.4rem;
   }
 
   .hobby-grid, .food-grid {
@@ -501,9 +517,10 @@ body {
     gap: 1rem;
   }
 
+  /* 趣味・食べ物カードを横並び(左揃え)にしてスマホでもスッキリ見せる */
   .hobby-card, .food-card {
-    padding: 1.5rem;
-    flex-direction: row; /* 横並びにしてコンパクトにする */
+    padding: 1.2rem;
+    flex-direction: row;
     text-align: left;
     align-items: center;
     gap: 1.2rem;
@@ -515,35 +532,104 @@ body {
   }
 
   .hobby-desc, .food-desc {
-    margin-top: 0.2rem;
+    margin-top: 0;
+    font-size: 0.85rem;
   }
 
+  /* モバイル端末でのタップ時・ホバー時の不要な動きを抑制 */
+  .profile-card:hover, .section:hover, .sns-card:hover {
+    transform: none !important;
+    box-shadow: var(--card-shadow) !important;
+  }
+  
   .point-item:hover {
-    transform: none; /* モバイルではホバー時の横ズレを抑制 */
+    transform: none; /* ホバー時の横ズレを抑制 */
+  }
+
+  .sns-card:hover .sns-arrow svg {
+    transform: none; /* 矢印の横ズレを抑制 */
   }
 }
 
 /* 小型スマートフォン向け (最大幅: 480px) */
 @media (max-width: 480px) {
+  body {
+    padding: 1rem 0.5rem; /* 左右の余白を最小限にし画面幅を広く使う */
+  }
+
+  .profile-card {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .profile-image-wrapper {
+    width: 110px; /* 写真のサイズを少しコンパクトに */
+    height: 110px;
+  }
+
+  .profile-name {
+    font-size: 1.55rem; /* 名前を小さくして折り返しを防ぐ */
+  }
+
+  .section {
+    padding: 1.5rem 1.2rem; /* 余白を狭めて文字領域を広げる */
+  }
+
+  .intro-text {
+    font-size: 0.95rem; /* テキストを若干小さくして読みやすく */
+  }
+
+  /* 箇条書きポイントもスマホで横並び(左揃え)を維持 */
+  .point-item {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .point-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+
+  .point-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .point-title {
+    font-size: 0.95rem;
+  }
+
+  .point-desc {
+    font-size: 0.82rem;
+  }
+
+  /* 趣味・食べ物カードも横並びのままコンパクトに調整 */
   .hobby-card, .food-card {
-    flex-direction: column; /* 非常に幅が狭い場合は縦並びに戻す */
-    text-align: center;
-    gap: 0.8rem;
+    padding: 1rem;
+    gap: 1rem;
   }
 
   .hobby-icon, .food-icon {
-    margin-bottom: 0.2rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
   }
 
-  .point-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.8rem;
+  .hobby-icon svg, .food-icon svg {
+    width: 20px;
+    height: 20px;
   }
 
+  .hobby-name, .food-name {
+    font-size: 1rem;
+  }
+
+  /* SNSリンクカードのスマホ最適化 */
   .sns-card {
-    padding: 1.2rem;
+    padding: 1rem;
     gap: 1rem;
   }
 
@@ -556,6 +642,14 @@ body {
   .sns-icon svg {
     width: 20px;
     height: 20px;
+  }
+
+  .sns-name {
+    font-size: 1.1rem;
+  }
+
+  .sns-desc {
+    font-size: 0.82rem;
   }
 }
 
