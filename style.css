@@ -541,9 +541,8 @@ body {
     transform: none !important;
     box-shadow: var(--card-shadow) !important;
   }
-  .line-btn:hover {
+  .line-official-btn:hover {
     transform: none !important;
-    box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3) !important;
   }
   
   .point-item:hover {
@@ -657,15 +656,8 @@ body {
   }
 
   /* Contactセクションのスマホ最適化 */
-  .line-btn {
-    padding: 0.9rem 1.6rem;
-    font-size: 1rem;
-    gap: 0.8rem;
-  }
-
-  .line-btn-icon svg {
-    width: 20px;
-    height: 20px;
+  .line-official-btn img {
+    height: 36px; /* スマホ向けに少しコンパクトに */
   }
 }
 
@@ -864,48 +856,27 @@ body {
   justify-content: center;
 }
 
-.line-btn {
+/* LINE公式 友だち追加ボタンのスタイル */
+.line-official-btn {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  background: linear-gradient(135deg, #06C755 0%, #05a847 100%);
-  color: #ffffff;
-  font-size: 1.15rem;
-  font-weight: 700;
-  text-decoration: none;
-  padding: 1.1rem 2.2rem;
-  border-radius: 50px;
-  box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3), 0 0 30px rgba(6, 199, 85, 0.1);
   transition: var(--transition-smooth);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  max-width: 100%;
 }
 
-.line-btn-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.line-btn-icon svg {
-  width: 24px;
-  height: 24px;
-}
-
-.line-btn-text {
-  letter-spacing: 0.05em;
+.line-official-btn img {
+  display: block;
+  height: 48px; /* PC向けに少し大きめに表示 */
+  width: auto;
+  transition: var(--transition-smooth);
 }
 
 /* ホバー効果 */
-.line-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(6, 199, 85, 0.5), 0 0 40px rgba(6, 199, 85, 0.2);
+.line-official-btn:hover {
+  transform: translateY(-2px);
   filter: brightness(1.05);
 }
 
-.line-btn:active {
-  transform: translateY(-1px);
+.line-official-btn:active {
+  transform: translateY(0);
 }
 
 /* アニメーション用 delay-6 */
