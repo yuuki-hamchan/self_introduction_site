@@ -317,102 +317,134 @@ body {
 
 /* 趣味セクション */
 .hobby-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
   margin-top: 0.5rem;
 }
 
 .hobby-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
   background: rgba(30, 41, 59, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 20px;
-  padding: 2rem 1.2rem;
-  text-align: center;
+  padding: 1.5rem;
   transition: var(--transition-smooth);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.9rem;
+}
+
+.hobby-card:hover {
+  background: rgba(30, 41, 59, 0.45);
+  border-color: rgba(0, 242, 254, 0.15);
+}
+
+.hobby-card:hover .hobby-icon {
+  transform: scale(1.05);
 }
 
 .hobby-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0.2rem;
   border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: var(--transition-smooth);
 }
 
 .hobby-icon svg {
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
+}
+
+.hobby-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
 .hobby-name {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--text-main);
   letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 
 .hobby-desc {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--text-sub);
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
-/* 好きな食べ物セクション */
+/* 好きなものセクション */
 .food-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
   margin-top: 0.5rem;
 }
 
 .food-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
   background: rgba(30, 41, 59, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 20px;
-  padding: 2rem 1.2rem;
-  text-align: center;
+  padding: 1.5rem;
   transition: var(--transition-smooth);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.9rem;
+}
+
+.food-card:hover {
+  background: rgba(30, 41, 59, 0.45);
+  border-color: rgba(255, 165, 0, 0.15);
+}
+
+.food-card:hover .food-icon {
+  transform: scale(1.05);
 }
 
 .food-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0.2rem;
   border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: var(--transition-smooth);
 }
 
 .food-icon svg {
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
+}
+
+.food-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
 .food-name {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--text-main);
   letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 
 .food-desc {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--text-sub);
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 /* フッター */
@@ -513,26 +545,16 @@ body {
   }
 
   .hobby-grid, .food-grid {
-    grid-template-columns: 1fr; /* 縦並びにする */
     gap: 1rem;
   }
 
-  /* 趣味・食べ物カードを横並び(左揃え)にしてスマホでもスッキリ見せる */
+  /* 趣味・食べ物カードの余白とギャップをスマホ用に調整 */
   .hobby-card, .food-card {
     padding: 1.2rem;
-    flex-direction: row;
-    text-align: left;
-    align-items: center;
     gap: 1.2rem;
   }
 
-  .hobby-icon, .food-icon {
-    flex-shrink: 0;
-    margin-bottom: 0;
-  }
-
   .hobby-desc, .food-desc {
-    margin-top: 0;
     font-size: 0.85rem;
   }
 
@@ -757,6 +779,7 @@ body {
   font-weight: 700;
   color: var(--text-main);
   letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 
 .sns-desc {
