@@ -762,13 +762,7 @@ body {
 /* ホバー時のインタラクティブエフェクト */
 .sns-card:hover {
   background: rgba(30, 41, 59, 0.5);
-  border-color: rgba(16, 185, 129, 0.4);
-  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15);
   transform: translateY(-3px);
-}
-
-.sns-card:hover .sns-arrow {
-  color: #10b981;
 }
 
 .sns-card:hover .sns-arrow svg {
@@ -777,7 +771,57 @@ body {
 
 .sns-card:hover .sns-icon {
   transform: scale(1.05);
+}
+
+/* 各サービス固有のホバーカラー定義 */
+
+/* note: エメラルドグリーン */
+#sns-note:hover {
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15);
+}
+#sns-note:hover .sns-arrow {
+  color: #10b981;
+}
+#sns-note:hover .sns-icon {
   box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
 }
+
+/* stand.fm: コーラルオレンジ */
+#sns-standfm:hover {
+  border-color: rgba(255, 111, 97, 0.4);
+  box-shadow: 0 8px 25px rgba(255, 111, 97, 0.15);
+}
+#sns-standfm:hover .sns-arrow {
+  color: #ff6f61;
+}
+#sns-standfm:hover .sns-icon {
+  box-shadow: 0 0 15px rgba(255, 111, 97, 0.2);
+}
+
+/* X (Twitter): ホワイト・スレート */
+#sns-x:hover {
+  border-color: rgba(248, 250, 252, 0.3);
+  box-shadow: 0 8px 25px rgba(248, 250, 252, 0.15);
+}
+#sns-x:hover .sns-arrow {
+  color: #f8fafc;
+}
+#sns-x:hover .sns-icon {
+  box-shadow: 0 0 15px rgba(248, 250, 252, 0.2);
+}
+
+/* 著書「はよ帰ろ」: Kindleライトブルー */
+#sns-book:hover {
+  border-color: rgba(0, 168, 232, 0.4);
+  box-shadow: 0 8px 25px rgba(0, 168, 232, 0.15);
+}
+#sns-book:hover .sns-arrow {
+  color: #00a8e8;
+}
+#sns-book:hover .sns-icon {
+  box-shadow: 0 0 15px rgba(0, 168, 232, 0.2);
+}
+
 
 
