@@ -537,7 +537,7 @@ body {
   }
 
   /* モバイル端末でのタップ時・ホバー時の不要な動きを抑制 */
-  .profile-card:hover, .section:hover, .sns-card:hover, .contact-notice:hover {
+  .profile-card:hover, .section:hover, .sns-card:hover {
     transform: none !important;
     box-shadow: var(--card-shadow) !important;
   }
@@ -657,25 +657,6 @@ body {
   }
 
   /* Contactセクションのスマホ最適化 */
-  .contact-notice {
-    padding: 1rem;
-    gap: 0.8rem;
-  }
-
-  .notice-icon {
-    width: 32px;
-    height: 32px;
-  }
-
-  .notice-icon svg {
-    width: 16px;
-    height: 16px;
-  }
-
-  .notice-text {
-    font-size: 0.82rem;
-  }
-
   .line-btn {
     padding: 0.9rem 1.6rem;
     font-size: 1rem;
@@ -873,54 +854,6 @@ body {
   font-size: 1.05rem;
   color: var(--text-main);
   line-height: 1.8;
-}
-
-/* 注意書きボックス（LINEグリーンの枠線） */
-.contact-notice {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  background: rgba(6, 199, 85, 0.08); /* LINEグリーンの薄い背景 */
-  border: 1px solid rgba(6, 199, 85, 0.3); /* LINEグリーンのボーダー */
-  border-radius: 16px;
-  padding: 1.2rem 1.5rem;
-  width: 100%;
-  max-width: 600px;
-  text-align: left;
-  transition: var(--transition-smooth);
-}
-
-.contact-notice:hover {
-  background: rgba(6, 199, 85, 0.12);
-  border-color: rgba(6, 199, 85, 0.5);
-  box-shadow: 0 0 15px rgba(6, 199, 85, 0.15);
-}
-
-.notice-icon {
-  flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  background: rgba(6, 199, 85, 0.15);
-  color: #06C755;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.notice-icon svg {
-  width: 20px;
-  height: 20px;
-}
-
-.notice-text {
-  font-size: 0.9rem;
-  color: var(--text-main);
-  line-height: 1.6;
-}
-
-.notice-text strong {
-  color: #06C755; /* LINEグリーンで強調 */
 }
 
 /* LINE誘導ボタン */
