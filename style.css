@@ -884,5 +884,11 @@ body {
   animation-delay: 0.9s;
 }
 
+/* テキストの折り返し制御用（文節の途中で改行されるのを防ぐ） */
+.inline-block {
+  display: inline-block;
+}
+
+
 
 
