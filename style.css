@@ -323,71 +323,7 @@ body {
   color: var(--text-sub);
 }
 
-/* 趣味セクション */
-.hobby-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  margin-top: 0.5rem;
-}
 
-.hobby-card {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  background: rgba(15, 23, 42, 0.02);
-  border: 1px solid rgba(15, 23, 42, 0.06);
-  border-radius: 20px;
-  padding: 1.5rem;
-  transition: var(--transition-smooth);
-}
-
-.hobby-card:hover {
-  background: rgba(15, 23, 42, 0.05);
-  border-color: rgba(15, 23, 42, 0.15);
-}
-
-.hobby-card:hover .hobby-icon {
-  transform: scale(1.05);
-}
-
-.hobby-icon {
-  flex-shrink: 0;
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  transition: var(--transition-smooth);
-}
-
-.hobby-icon svg {
-  width: 24px;
-  height: 24px;
-}
-
-.hobby-info {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.hobby-name {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--text-main);
-  letter-spacing: 0.05em;
-  white-space: nowrap;
-}
-
-.hobby-desc {
-  font-size: 0.9rem;
-  color: var(--text-sub);
-  line-height: 1.6;
-}
 
 /* プロフィールタイムラインセクション */
 .profile-subtitle {
@@ -438,8 +374,8 @@ body {
 }
 
 .timeline-content {
-  background: rgba(15, 23, 42, 0.85); /* 背景を暗く濃くして文字を浮かび上がらせる */
-  border: 1px solid rgba(255, 255, 255, 0.1); /* 標準の薄い境界線（テーマ別で上書き） */
+  background: rgba(15, 23, 42, 0.02); /* 明るい薄いグレー背景 */
+  border: 1px solid rgba(15, 23, 42, 0.08); /* 標準の薄い境界線 */
   border-left: 4px solid var(--text-sub); /* 左側の縦アクセントバー（テーマ別で上書き） */
   border-radius: 16px;
   padding: 1.5rem;
@@ -448,7 +384,7 @@ body {
 }
 
 .timeline-item:hover .timeline-content {
-  background: rgba(15, 23, 42, 0.95);
+  background: rgba(15, 23, 42, 0.05);
   transform: translateX(6px);
 }
 
@@ -560,7 +496,7 @@ body {
 }
 .timeline-item.theme-pink:hover .timeline-content {
   border-color: rgba(15, 23, 42, 0.5);
-  background: rgba(15, 23, 42, 0.04);
+  background: rgba(15, 23, 42, 0.05);
   box-shadow: 0 0 25px rgba(15, 23, 42, 0.1);
 }
 .timeline-item.theme-pink .timeline-period {
@@ -601,8 +537,8 @@ body {
 }
 
 .roadmap-card {
-  background: rgba(30, 41, 59, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(15, 23, 42, 0.02);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 16px;
   padding: 1.5rem;
   position: relative;
@@ -625,7 +561,7 @@ body {
 }
 
 .roadmap-card:hover {
-  background: rgba(30, 41, 59, 0.5);
+  background: rgba(15, 23, 42, 0.05);
   border-color: rgba(127, 96, 255, 0.25);
   transform: translateY(-2px);
 }
@@ -887,26 +823,7 @@ body {
 
 
 
-  /* 趣味カードも横並びのままコンパクトに調整 */
-  .hobby-card {
-    padding: 1rem;
-    gap: 1rem;
-  }
 
-  .hobby-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-  }
-
-  .hobby-icon svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .hobby-name {
-    font-size: 1rem;
-  }
 
   /* SNSリンクカードのスマホ最適化 */
   .sns-card {
@@ -1219,18 +1136,8 @@ body {
   color: #334155;
 }
 
-#hobby-camp .hobby-icon {
-  background-color: rgba(15, 23, 42, 0.08);
-  color: #0F172A;
-}
-#hobby-bike .hobby-icon {
-  background-color: rgba(15, 23, 42, 0.06);
-  color: #334155;
-}
-#hobby-book .hobby-icon {
-  background-color: rgba(15, 23, 42, 0.04);
-  color: #475569;
-}
+
+
 
 
 
