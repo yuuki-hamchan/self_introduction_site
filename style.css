@@ -269,6 +269,7 @@ body {
   text-align: left;
   font-size: 0.92rem;
   line-height: 1.65;
+  table-layout: fixed; /* 列の幅を固定し、はみ出しを防ぐ */
 }
 
 .comparison-table th,
@@ -282,9 +283,14 @@ body {
   background: rgba(15, 23, 42, 0.05);
   color: var(--primary-color);
   font-weight: 700;
-  white-space: nowrap;
   letter-spacing: 0.05em;
 }
+
+/* 各列の幅を指定 */
+.comparison-table th:nth-child(1) { width: 18%; } /* 役職 */
+.comparison-table th:nth-child(2) { width: 27%; } /* 現場のリアルなPC負担 */
+.comparison-table th:nth-child(3) { width: 28%; } /* あなたのデジタル解決策 */
+.comparison-table th:nth-child(4) { width: 27%; } /* 経営者・施設長へのメリット */
 
 .comparison-table tr:last-child td {
   border-bottom: none;
