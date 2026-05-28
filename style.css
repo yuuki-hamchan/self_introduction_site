@@ -11,15 +11,15 @@
 }
 
 :root {
-  /* 未来的なサイバー・デジタル配色パレット */
-  --bg-gradient: linear-gradient(135deg, #070B19 0%, #0F172A 50%, #050510 100%);
-  --text-main: #F8FAFC;      /* クリーンなホワイト */
-  --text-sub: #94A3B8;       /* ブルーグレーのサブテキスト */
-  --card-bg: rgba(15, 23, 42, 0.65); /* 暗い半透明（グラスモーフィズム） */
-  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.37); /* 暗めの影 */
-  --primary-color: #00f2fe;   /* ネオンサイアン */
-  --secondary-color: #7f60ff; /* ネオンパープル */
-  --accent-color: #ff007f;    /* ネオンピンク */
+  /* 明るいモノトーン調の配色パレット */
+  --bg-gradient: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 50%, #E2E8F0 100%);
+  --text-main: #0F172A;      /* 深い黒/ダークスレート */
+  --text-sub: #475569;       /* チャコールグレーのサブテキスト */
+  --card-bg: rgba(255, 255, 255, 0.75); /* 白の半透明グラスモーフィズム */
+  --card-shadow: 0 8px 32px rgba(15, 23, 42, 0.06); /* 柔らかく上品な影 */
+  --primary-color: #0F172A;   /* 主要なアクセント（漆黒） */
+  --secondary-color: #334155; /* サブ（チャコールグレー） */
+  --accent-color: #64748B;    /* サード（ライトグレー） */
   --font-japanese: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-english: 'Space Grotesk', 'Orbitron', sans-serif;
   --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* なめらかなアニメーション */
@@ -63,7 +63,7 @@ body {
 .circle-1 {
   width: 400px;
   height: 400px;
-  background-color: rgba(0, 242, 254, 0.2); /* ネオンサイアン */
+  background-color: rgba(15, 23, 42, 0.03); /* ごく薄いグレー */
   top: 5%;
   left: -100px;
 }
@@ -71,7 +71,7 @@ body {
 .circle-2 {
   width: 450px;
   height: 450px;
-  background-color: rgba(127, 96, 255, 0.2); /* ネオンパープル */
+  background-color: rgba(15, 23, 42, 0.03); /* ごく薄いグレー */
   bottom: 5%;
   right: -150px;
 }
@@ -79,7 +79,7 @@ body {
 .circle-3 {
   width: 300px;
   height: 300px;
-  background-color: rgba(255, 0, 127, 0.12); /* ネオンピンク */
+  background-color: rgba(15, 23, 42, 0.02); /* さらに薄いグレー */
   top: 45%;
   left: 45%;
   transform: translate(-50%, -50%);
@@ -96,12 +96,12 @@ body {
 
 /* 4. コンポーネントスタイル */
 
-/* カードの基本設定（グラスモーフィズム調） */
+/* カードの基本設定（明るいグラスモーフィズム調） */
 .profile-card, .section {
   background: var(--card-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 24px;
   padding: 2.5rem;
   box-shadow: var(--card-shadow);
@@ -110,8 +110,8 @@ body {
 
 .profile-card:hover, .section:hover {
   transform: translateY(-3px);
-  border-color: rgba(0, 242, 254, 0.25);
-  box-shadow: 0 12px 40px rgba(0, 242, 254, 0.1);
+  border-color: rgba(15, 23, 42, 0.15);
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
 }
 
 /* ヘッダー・プロフィールカード */
@@ -140,8 +140,8 @@ body {
   height: 140px;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
-  background: #1e293b;
+  box-shadow: 0 0 20px rgba(15, 23, 42, 0.1);
+  background: #ffffff;
   border: 2px solid var(--primary-color);
   display: flex;
   justify-content: center;
@@ -203,6 +203,19 @@ body {
   font-weight: 500;
 }
 
+/* プロフィール下部の新メッセージブロック */
+.profile-message {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background: rgba(15, 23, 42, 0.03); /* 薄いグレー背景 */
+  border: 1px solid rgba(15, 23, 42, 0.08); /* 細い枠線 */
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  margin-top: 0.6rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
 /* セクション共通 */
 .section-title {
   font-family: var(--font-english);
@@ -248,17 +261,17 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 1.2rem;
-  background: rgba(30, 41, 59, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(15, 23, 42, 0.02);
+  border: 1px solid rgba(15, 23, 42, 0.06);
   border-radius: 16px;
   padding: 1.2rem;
   transition: var(--transition-smooth);
 }
 
 .point-item:hover {
-  background: rgba(30, 41, 59, 0.55);
-  border-color: rgba(0, 242, 254, 0.3);
-  box-shadow: 0 0 15px rgba(0, 242, 254, 0.08);
+  background: rgba(15, 23, 42, 0.05);
+  border-color: rgba(15, 23, 42, 0.15);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
   transform: translateX(4px);
 }
 
@@ -266,14 +279,13 @@ body {
   flex-shrink: 0;
   width: 44px;
   height: 44px;
-  background: rgba(0, 242, 254, 0.1);
+  background: rgba(15, 23, 42, 0.05);
   color: var(--primary-color);
-  border: 1px solid rgba(0, 242, 254, 0.25);
+  border: 1px solid rgba(15, 23, 42, 0.1);
   border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 10px rgba(0, 242, 254, 0.1);
 }
 
 .point-icon svg {
@@ -281,19 +293,23 @@ body {
   height: 22px;
 }
 
-/* PC以外のアイコン用カラー */
+/* モノトーン階調に合わせたアイコン設定 */
+.point-item:nth-child(1) .point-icon {
+  background: rgba(15, 23, 42, 0.08);
+  color: var(--primary-color);
+  border-color: rgba(15, 23, 42, 0.15);
+}
+
 .point-item:nth-child(2) .point-icon {
-  background: rgba(127, 96, 255, 0.1);
+  background: rgba(15, 23, 42, 0.06);
   color: var(--secondary-color);
-  border-color: rgba(127, 96, 255, 0.25);
-  box-shadow: 0 0 10px rgba(127, 96, 255, 0.1);
+  border-color: rgba(15, 23, 42, 0.12);
 }
 
 .point-item:nth-child(3) .point-icon {
-  background: rgba(255, 0, 127, 0.1);
+  background: rgba(15, 23, 42, 0.04);
   color: var(--accent-color);
-  border-color: rgba(255, 0, 127, 0.25);
-  box-shadow: 0 0 10px rgba(255, 0, 127, 0.1);
+  border-color: rgba(15, 23, 42, 0.1);
 }
 
 .point-details {
@@ -327,16 +343,16 @@ body {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  background: rgba(30, 41, 59, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(15, 23, 42, 0.02);
+  border: 1px solid rgba(15, 23, 42, 0.06);
   border-radius: 20px;
   padding: 1.5rem;
   transition: var(--transition-smooth);
 }
 
 .hobby-card:hover {
-  background: rgba(30, 41, 59, 0.45);
-  border-color: rgba(0, 242, 254, 0.15);
+  background: rgba(15, 23, 42, 0.05);
+  border-color: rgba(15, 23, 42, 0.15);
 }
 
 .hobby-card:hover .hobby-icon {
@@ -351,7 +367,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   transition: var(--transition-smooth);
 }
 
@@ -477,37 +493,41 @@ body {
    テーマカラー別の配色ルール
    ========================================== */
 
-/* 1. ブルーテーマ（福祉の原点・下積み時代） */
+/* ==========================================
+   テーマカラー別の配色ルール（モノトーン階調）
+   ========================================== */
+
+/* 1. ライトグレーテーマ（福祉の原点・下積み時代） */
 .timeline-item.theme-blue .timeline-dot {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 10px rgba(148, 163, 184, 0.3);
 }
 .timeline-item.theme-blue:hover .timeline-dot {
-  background: var(--primary-color);
+  background: var(--accent-color);
   transform: scale(1.3);
-  box-shadow: 0 0 18px var(--primary-color);
+  box-shadow: 0 0 18px var(--accent-color);
 }
 .timeline-item.theme-blue .timeline-content {
-  border-color: rgba(0, 242, 254, 0.18);
-  border-left: 4px solid var(--primary-color); /* 左側の水色バー */
+  border-color: rgba(148, 163, 184, 0.18);
+  border-left: 4px solid var(--accent-color);
 }
 .timeline-item.theme-blue:hover .timeline-content {
-  border-color: rgba(0, 242, 254, 0.4);
-  box-shadow: 0 0 20px rgba(0, 242, 254, 0.12);
+  border-color: rgba(148, 163, 184, 0.4);
+  box-shadow: 0 0 20px rgba(148, 163, 184, 0.08);
 }
 .timeline-item.theme-blue .timeline-period {
-  color: var(--primary-color);
-  background: rgba(0, 242, 254, 0.08);
-  border-color: rgba(0, 242, 254, 0.25);
+  color: var(--text-sub);
+  background: rgba(148, 163, 184, 0.08);
+  border-color: rgba(148, 163, 184, 0.25);
 }
 .timeline-item.theme-blue .timeline-title {
-  border-bottom-color: rgba(0, 242, 254, 0.15); /* タイトル下の水色区切り線 */
+  border-bottom-color: rgba(148, 163, 184, 0.15);
 }
 
-/* 2. パープルテーマ（新規開設・管理者・兼務・複合施設） */
+/* 2. チャコールグレーテーマ（新規開設・管理者・兼務・複合施設） */
 .timeline-item.theme-purple .timeline-dot {
   border-color: var(--secondary-color);
-  box-shadow: 0 0 10px rgba(127, 96, 255, 0.4);
+  box-shadow: 0 0 10px rgba(71, 85, 105, 0.3);
 }
 .timeline-item.theme-purple:hover .timeline-dot {
   background: var(--secondary-color);
@@ -515,49 +535,49 @@ body {
   box-shadow: 0 0 18px var(--secondary-color);
 }
 .timeline-item.theme-purple .timeline-content {
-  border-color: rgba(127, 96, 255, 0.18);
-  border-left: 4px solid var(--secondary-color); /* 左側の紫バー */
+  border-color: rgba(71, 85, 105, 0.18);
+  border-left: 4px solid var(--secondary-color);
 }
 .timeline-item.theme-purple:hover .timeline-content {
-  border-color: rgba(127, 96, 255, 0.4);
-  box-shadow: 0 0 20px rgba(127, 96, 255, 0.12);
+  border-color: rgba(71, 85, 105, 0.4);
+  box-shadow: 0 0 20px rgba(71, 85, 105, 0.08);
 }
 .timeline-item.theme-purple .timeline-period {
   color: var(--secondary-color);
-  background: rgba(127, 96, 255, 0.08);
-  border-color: rgba(127, 96, 255, 0.25);
+  background: rgba(71, 85, 105, 0.08);
+  border-color: rgba(71, 85, 105, 0.25);
 }
 .timeline-item.theme-purple .timeline-title {
-  border-bottom-color: rgba(127, 96, 255, 0.15); /* タイトル下の紫区切り線 */
+  border-bottom-color: rgba(71, 85, 105, 0.15);
 }
 
-/* 3. ピンクテーマ（新たな挑戦・フリーランス起業） */
+/* 3. ディープブラックテーマ（新たな挑戦・フリーランス起業） */
 .timeline-item.theme-pink .timeline-dot {
-  border-color: var(--accent-color);
-  box-shadow: 0 0 12px rgba(255, 0, 127, 0.5);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 12px rgba(15, 23, 42, 0.2);
 }
 .timeline-item.theme-pink:hover .timeline-dot {
-  background: var(--accent-color);
+  background: var(--primary-color);
   transform: scale(1.35);
-  box-shadow: 0 0 20px var(--accent-color);
+  box-shadow: 0 0 20px var(--primary-color);
 }
 .timeline-item.theme-pink .timeline-content {
-  border-color: rgba(255, 0, 127, 0.25);
-  border-left: 4px solid var(--accent-color); /* 左側のピンクバー */
-  background: rgba(255, 0, 127, 0.03); /* 起業の特別感を出すため、背景をほんのりピンクに */
+  border-color: rgba(15, 23, 42, 0.25);
+  border-left: 4px solid var(--primary-color);
+  background: rgba(15, 23, 42, 0.02);
 }
 .timeline-item.theme-pink:hover .timeline-content {
-  border-color: rgba(255, 0, 127, 0.5);
-  background: rgba(255, 0, 127, 0.06);
-  box-shadow: 0 0 25px rgba(255, 0, 127, 0.15);
+  border-color: rgba(15, 23, 42, 0.5);
+  background: rgba(15, 23, 42, 0.04);
+  box-shadow: 0 0 25px rgba(15, 23, 42, 0.1);
 }
 .timeline-item.theme-pink .timeline-period {
-  color: var(--accent-color);
-  background: rgba(255, 0, 127, 0.08);
-  border-color: rgba(255, 0, 127, 0.25);
+  color: var(--primary-color);
+  background: rgba(15, 23, 42, 0.08);
+  border-color: rgba(15, 23, 42, 0.25);
 }
 .timeline-item.theme-pink .timeline-title {
-  border-bottom-color: rgba(255, 0, 127, 0.25); /* タイトル下のピンク区切り線 */
+  border-bottom-color: rgba(15, 23, 42, 0.25);
 }
 
 /* 今後のロードマップ */
@@ -903,8 +923,10 @@ body {
   text-align: center;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.1);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-main);
 }
 
 .toast-notification.show {
@@ -934,8 +956,8 @@ body {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  background: rgba(30, 41, 59, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(15, 23, 42, 0.02);
+  border: 1px solid rgba(15, 23, 42, 0.06);
   border-radius: 20px;
   padding: 1.5rem;
   text-decoration: none;
@@ -951,7 +973,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   transition: var(--transition-smooth);
 }
 
@@ -991,8 +1013,8 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(15, 23, 42, 0.03);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   transition: var(--transition-smooth);
 }
 
@@ -1008,19 +1030,19 @@ body {
 }
 
 .sns-card:hover {
-  background: rgba(30, 41, 59, 0.5);
+  background: rgba(15, 23, 42, 0.05);
   transform: translateY(-3px);
 }
 
 /* タップ時・クリック時のへこむエフェクト（PC・スマホ共通のベース設定） */
 .sns-card:active {
   transform: scale(0.98);
-  background: rgba(30, 41, 59, 0.55);
+  background: rgba(15, 23, 42, 0.08);
 }
 
 .sns-card:hover .sns-arrow {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(15, 23, 42, 0.08);
+  border-color: rgba(15, 23, 42, 0.15);
   color: var(--text-main);
 }
 
@@ -1034,52 +1056,52 @@ body {
 
 /* 各サービス固有のホバーカラー定義 */
 
-/* note: エメラルドグリーン */
+/* note: モノトーンに変更 */
 #sns-note:hover {
-  border-color: rgba(16, 185, 129, 0.4);
-  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15);
+  border-color: rgba(15, 23, 42, 0.4);
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
 }
 #sns-note:hover .sns-arrow {
-  color: #10b981;
+  color: var(--primary-color);
 }
 #sns-note:hover .sns-icon {
-  box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+  box-shadow: 0 0 15px rgba(15, 23, 42, 0.1);
 }
 
-/* stand.fm: コーラルオレンジ */
+/* stand.fm: モノトーンに変更 */
 #sns-standfm:hover {
-  border-color: rgba(255, 111, 97, 0.4);
-  box-shadow: 0 8px 25px rgba(255, 111, 97, 0.15);
+  border-color: rgba(15, 23, 42, 0.4);
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
 }
 #sns-standfm:hover .sns-arrow {
-  color: #ff6f61;
+  color: var(--primary-color);
 }
 #sns-standfm:hover .sns-icon {
-  box-shadow: 0 0 15px rgba(255, 111, 97, 0.2);
+  box-shadow: 0 0 15px rgba(15, 23, 42, 0.1);
 }
 
-/* X (Twitter): ホワイト・スレート */
+/* X (Twitter): モノトーンに変更 */
 #sns-x:hover {
-  border-color: rgba(248, 250, 252, 0.3);
-  box-shadow: 0 8px 25px rgba(248, 250, 252, 0.15);
+  border-color: rgba(15, 23, 42, 0.4);
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
 }
 #sns-x:hover .sns-arrow {
-  color: #f8fafc;
+  color: var(--primary-color);
 }
 #sns-x:hover .sns-icon {
-  box-shadow: 0 0 15px rgba(248, 250, 252, 0.2);
+  box-shadow: 0 0 15px rgba(15, 23, 42, 0.1);
 }
 
-/* 著書「はよ帰ろ」: Kindleライトブルー */
+/* 著書「はよ帰ろ」: モノトーンに変更 */
 #sns-book:hover {
-  border-color: rgba(0, 168, 232, 0.4);
-  box-shadow: 0 8px 25px rgba(0, 168, 232, 0.15);
+  border-color: rgba(15, 23, 42, 0.4);
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
 }
 #sns-book:hover .sns-arrow {
-  color: #00a8e8;
+  color: var(--primary-color);
 }
 #sns-book:hover .sns-icon {
-  box-shadow: 0 0 15px rgba(0, 168, 232, 0.2);
+  box-shadow: 0 0 15px rgba(15, 23, 42, 0.1);
 }
 
 /* ==========================================
@@ -1138,6 +1160,39 @@ body {
 /* テキストの折り返し制御用（文節の途中で改行されるのを防ぐ） */
 .inline-block {
   display: inline-block;
+}
+
+/* ==========================================
+   10. 各種カードアイコンのモノトーン配色
+   ========================================== */
+#sns-note .sns-icon {
+  background-color: rgba(15, 23, 42, 0.08);
+  color: #0F172A;
+}
+#sns-standfm .sns-icon {
+  background-color: rgba(15, 23, 42, 0.06);
+  color: #334155;
+}
+#sns-x .sns-icon {
+  background-color: rgba(15, 23, 42, 0.04);
+  color: #475569;
+}
+#sns-book .sns-icon {
+  background-color: rgba(15, 23, 42, 0.05);
+  color: #334155;
+}
+
+#hobby-camp .hobby-icon {
+  background-color: rgba(15, 23, 42, 0.08);
+  color: #0F172A;
+}
+#hobby-bike .hobby-icon {
+  background-color: rgba(15, 23, 42, 0.06);
+  color: #334155;
+}
+#hobby-book .hobby-icon {
+  background-color: rgba(15, 23, 42, 0.04);
+  color: #475569;
 }
 
 
