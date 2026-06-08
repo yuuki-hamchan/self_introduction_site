@@ -285,81 +285,16 @@ body {
   line-height: 1.9;
 }
 
-/* デジタル化・改善ポイントリスト */
-/* 比較テーブルのスタイル（未来的・デジタルグラスモーフィズムに準拠） */
-.table-container {
-  width: 100%;
-  overflow-x: auto;
-  margin-top: 2rem;
-  border-radius: 16px;
-  border: 1px solid rgba(194, 65, 12, 0.08);
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 4px 20px rgba(194, 65, 12, 0.03);
-}
-
-.comparison-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-  font-size: 0.92rem;
-  line-height: 1.65;
-  table-layout: fixed; /* 列の幅を固定し、はみ出しを防ぐ */
-}
-
-.comparison-table th,
-.comparison-table td {
-  padding: 1.2rem 1.1rem;
-  border-bottom: 1px solid rgba(194, 65, 12, 0.08);
-  vertical-align: top;
-}
-
-.comparison-table th {
-  background: rgba(194, 65, 12, 0.05);
-  color: var(--primary-color);
-  font-weight: 700;
-  letter-spacing: 0.05em;
-}
-
-/* 各列の幅を指定 */
-.comparison-table th:nth-child(1) { width: 18%; } /* 役職 */
-.comparison-table th:nth-child(2) { width: 27%; } /* 現場のリアルなPC負担 */
-.comparison-table th:nth-child(3) { width: 28%; } /* あなたのデジタル解決策 */
-.comparison-table th:nth-child(4) { width: 27%; } /* 経営者・施設長へのメリット */
-
-.comparison-table tr:last-child td {
-  border-bottom: none;
-}
-
-.comparison-table tr {
-  transition: var(--transition-smooth);
-}
-
-.comparison-table tr:hover {
-  background: rgba(194, 65, 12, 0.02);
-}
-
-.cell-role {
-  font-weight: 700;
-  color: var(--primary-color);
-  white-space: nowrap;
-}
-
-.cell-pain {
-  color: var(--text-main);
-}
-
-.cell-solution {
-  color: var(--text-main);
+/* タイムラインの導入部（About Me内のサブタイトル） */
+.timeline-intro-subtitle {
+  color: var(--text-sub);
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  text-align: center;
+  position: relative;
   font-weight: 500;
 }
-
-.cell-benefit {
-  color: var(--text-sub);
-}
-
-
 
 /* プロフィールタイムラインセクション */
 .profile-subtitle {
