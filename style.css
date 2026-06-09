@@ -1438,6 +1438,65 @@ body {
   }
 }
 
+/* ==========================================
+   12. SNSセクションの導入文スタイル
+   ========================================== */
+.sns-intro-container {
+  background: rgba(194, 65, 12, 0.03); /* 薄いオレンジ背景 */
+  border: 1px solid rgba(194, 65, 12, 0.08); /* 細いオレンジ枠線 */
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-top: -0.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  box-shadow: inset 0 2px 8px rgba(194, 65, 12, 0.02);
+}
+
+.sns-subtitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent-color); /* 鮮やかなオレンジ */
+  letter-spacing: 0.05em;
+}
+
+.sns-intro-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.4;
+  border-bottom: 2px solid rgba(194, 65, 12, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.sns-intro-text {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* モバイルでの調整 */
+@media (max-width: 768px) {
+  .sns-intro-container {
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sns-subtitle {
+    font-size: 0.85rem;
+  }
+  
+  .sns-intro-title {
+    font-size: 1.1rem;
+  }
+  
+  .sns-intro-text {
+    font-size: 0.88rem;
+  }
+}
+
 
 
 
