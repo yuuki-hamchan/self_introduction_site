@@ -1368,6 +1368,76 @@ body {
   }
 }
 
+/* 限定案内ボックスのスタイル */
+.proposal-limit-box {
+  background: rgba(194, 65, 12, 0.03); /* 非常に薄いオレンジ色の背景 */
+  border: 1px solid rgba(194, 65, 12, 0.15); /* 細いオレンジの枠線 */
+  border-radius: 16px; /* 角を丸くする */
+  padding: 1.5rem; /* 内側の余白 */
+  margin-top: 1rem; /* 上のボタンとの隙間 */
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 左側の縦ラインのアクセント（グラデーションカラー） */
+.proposal-limit-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+}
+
+.limit-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.limit-title::before {
+  content: '⏰'; /* 目を引く時計の絵文字 */
+}
+
+.limit-text {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  line-height: 1.7;
+  margin-left: 0.5rem;
+  text-align: justify;
+}
+
+.limit-message {
+  font-weight: 700;
+  color: var(--secondary-color);
+  background: rgba(255, 255, 255, 0.6); /* 白背景にして文字を目立たせる */
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  margin-top: 0.2rem;
+  border-left: 3px solid var(--accent-color); /* さらに左側に細いアクセント線 */
+}
+
+/* スマートフォンでの文字サイズや余白の微調整 */
+@media (max-width: 768px) {
+  .proposal-limit-box {
+    padding: 1.2rem;
+  }
+  .limit-title {
+    font-size: 1rem;
+  }
+  .limit-text {
+    font-size: 0.85rem;
+  }
+}
+
 
 
 
