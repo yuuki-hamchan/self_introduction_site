@@ -1497,6 +1497,82 @@ body {
   }
 }
 
+/* ==========================================
+   13. 中間のLINE誘導ボタンセクションスタイル
+   ========================================== */
+.middle-cta-section {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(194, 65, 12, 0.08);
+  border-radius: 24px;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition-smooth);
+}
+
+.middle-cta-section:hover {
+  transform: translateY(-3px);
+  border-color: rgba(194, 65, 12, 0.18);
+  box-shadow: 0 12px 40px rgba(194, 65, 12, 0.08);
+}
+
+.cta-sub-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+  animation: pulseText 2s infinite ease-in-out;
+}
+
+@keyframes pulseText {
+  0%, 100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+.cta-action {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* さらに大きめのボタンにするための調整 */
+.middle-cta-btn {
+  font-size: 1.1rem;
+  padding: 1.1rem 2.5rem;
+  box-shadow: 0 6px 20px rgba(6, 199, 85, 0.3);
+}
+
+@media (max-width: 768px) {
+  .middle-cta-section {
+    padding: 1.75rem 1.5rem;
+  }
+  .middle-cta-section:hover {
+    transform: none !important;
+    box-shadow: var(--card-shadow) !important;
+  }
+  .cta-sub-text {
+    font-size: 0.85rem;
+  }
+  .middle-cta-btn {
+    font-size: 0.95rem;
+    padding: 0.9rem 1.8rem;
+    width: 100%; /* スマホでは全幅に */
+  }
+}
+
 
 
 
