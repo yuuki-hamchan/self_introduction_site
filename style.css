@@ -1204,6 +1204,170 @@ body {
   color: #B45309;
 }
 
+/* ==========================================
+   11. ご提案（無料診断）セクションの追加スタイル
+   ========================================== */
+.proposal-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.proposal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.proposal-catchphrase {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.5;
+  text-align: center;
+  margin-top: -0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.proposal-lead {
+  font-size: 1.05rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  text-align: center;
+  margin-top: -0.2rem;
+  line-height: 1.6;
+}
+
+.proposal-card-content {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid rgba(194, 65, 12, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.proposal-text {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.proposal-text strong {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.proposal-info-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  font-size: 0.88rem;
+}
+
+.proposal-info-box.warning-box {
+  background: rgba(251, 146, 60, 0.08); /* 非常に薄いオレンジ警告背景 */
+  border: 1px dashed rgba(234, 88, 12, 0.4);
+  color: var(--text-main);
+}
+
+.info-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.info-text {
+  line-height: 1.6;
+}
+
+.proposal-extra-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* ご提案専用LINEボタン */
+.proposal-action {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.proposal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  background: linear-gradient(135deg, #06C755 0%, #05B04B 100%); /* LINEカラーのグラデーション */
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(6, 199, 85, 0.25);
+  transition: var(--transition-smooth);
+}
+
+.proposal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(6, 199, 85, 0.35);
+  filter: brightness(1.05);
+}
+
+.proposal-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(6, 199, 85, 0.2);
+}
+
+.proposal-btn .btn-icon {
+  display: flex;
+  align-items: center;
+}
+
+.proposal-btn .btn-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* スマホ用の改行調整 */
+.pc-only {
+  display: inline;
+}
+
+/* メディアクエリ対応 */
+@media (max-width: 768px) {
+  .proposal-catchphrase {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+  .proposal-lead {
+    font-size: 0.95rem;
+  }
+  .proposal-card-content {
+    padding: 1.2rem;
+  }
+  .proposal-text {
+    font-size: 0.88rem;
+  }
+  .proposal-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%; /* スマホでは幅いっぱいに */
+  }
+}
+
+@media (max-width: 480px) {
+  .pc-only {
+    display: none;
+  }
+}
+
 
 
 
