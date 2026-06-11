@@ -880,6 +880,11 @@ body {
     height: 20px;
   }
 
+  .sns-icon img {
+    width: 20px;
+    height: 20px;
+  }
+
   .sns-name {
     font-size: 1.1rem;
   }
@@ -1002,6 +1007,12 @@ body {
 .sns-icon svg {
   width: 24px;
   height: 24px;
+}
+
+.sns-icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
 .sns-info {
