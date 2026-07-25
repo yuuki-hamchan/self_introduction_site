@@ -1628,9 +1628,491 @@ body {
   }
 }
 
+/* ==========================================
+   14. メイン（ポータル）画面 & 各サブページ用新規スタイル
+   ========================================== */
 
+/* ポータルのヒーローセクション */
+.portal-hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(194, 65, 12, 0.08);
+  border-radius: 24px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
 
+.portal-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-color), var(--primary-color), var(--secondary-color));
+}
 
+.portal-catchphrase {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text-main);
+  letter-spacing: 0.08em;
+  margin-bottom: 1.2rem;
+}
 
+.portal-catchphrase .highlight-line {
+  background: linear-gradient(transparent 70%, rgba(234, 88, 12, 0.15) 70%);
+  display: inline-block;
+}
 
+.portal-sub-catchphrase {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
 
+.portal-hero-lead {
+  font-size: 1.05rem;
+  color: var(--text-sub);
+  line-height: 1.8;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* サービス選択グリッド */
+.service-select-section {
+  position: relative;
+}
+
+.service-select-lead {
+  text-align: center;
+  color: var(--text-sub);
+  margin-top: -1rem;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+}
+
+.service-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.service-card {
+  display: block;
+  text-decoration: none;
+  color: var(--text-main);
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(194, 65, 12, 0.08);
+  border-radius: 20px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition-smooth);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(194, 65, 12, 0.25);
+  box-shadow: 0 16px 48px rgba(194, 65, 12, 0.1);
+}
+
+/* カード内の光エフェクト */
+.card-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 100% 0%, rgba(234, 88, 12, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  transition: var(--transition-smooth);
+}
+
+.service-card:hover .card-glow {
+  background: radial-gradient(circle at 100% 0%, rgba(234, 88, 12, 0.15) 0%, transparent 60%);
+}
+
+.service-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card-status-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+}
+
+.service-card-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+.service-card-subtitle {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-top: -0.3rem;
+}
+
+.service-card-desc {
+  font-size: 0.95rem;
+  color: var(--text-sub);
+  line-height: 1.7;
+  text-align: justify;
+  margin-top: 0.4rem;
+}
+
+.service-card-btn {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1rem;
+  transition: var(--transition-smooth);
+  border-bottom: 1.5px solid transparent;
+  padding-bottom: 2px;
+}
+
+.service-card:hover .service-card-btn {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
+
+.btn-arrow {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .btn-arrow {
+  transform: translateX(5px);
+}
+
+/* 新規コンサル用ヒーローセクション */
+.consult-hero-card {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(194, 65, 12, 0.08);
+  border-radius: 24px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.consult-hero-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #3B82F6, #10B981, var(--primary-color));
+}
+
+.hero-badge {
+  font-family: var(--font-english);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  background-color: rgba(194, 65, 12, 0.06);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  border: 1px solid rgba(194, 65, 12, 0.15);
+  letter-spacing: 0.12em;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text-main);
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+
+.hero-gradient-text {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-lead {
+  font-size: 1.05rem;
+  color: var(--text-sub);
+  line-height: 1.8;
+  max-width: 680px;
+}
+
+/* ホームに戻るボタン */
+.nav-back-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: -0.5rem;
+}
+
+.nav-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-sub);
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(194, 65, 12, 0.08);
+  border-radius: 30px;
+  padding: 0.6rem 1.2rem;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition-smooth);
+}
+
+.nav-back-btn:hover {
+  transform: translateX(-3px);
+  color: var(--primary-color);
+  border-color: rgba(194, 65, 12, 0.2);
+  box-shadow: 0 4px 12px rgba(194, 65, 12, 0.08);
+}
+
+.back-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.nav-back-btn:hover .back-icon {
+  transform: translateX(-2px);
+}
+
+/* メディアクエリ対応の追加 */
+@media (max-width: 768px) {
+  .portal-hero, .consult-hero-card {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .portal-catchphrase {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+  
+  .portal-sub-catchphrase {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .portal-hero-lead, .hero-lead {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  .hero-title {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+  
+  .service-card {
+    padding: 1.5rem;
+  }
+  
+  .service-card-title {
+    font-size: 1.3rem;
+  }
+  
+  .service-card-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .service-card-desc {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+  
+  .service-card-btn {
+    font-size: 0.9rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* ==========================================
+   コンサル画面：追加実績・ターゲット用スタイル
+   ========================================== */
+.experience-stages {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.stages-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.stages-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .stages-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stage-card {
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(194, 65, 12, 0.1);
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: var(--transition-smooth);
+}
+
+.stage-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(194, 65, 12, 0.2);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.stage-badge {
+  font-family: var(--font-english);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  background: rgba(194, 65, 12, 0.08);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+.stage-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.stage-achievement {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin: 0.2rem 0;
+}
+
+.stage-achievement .label {
+  font-size: 0.75rem;
+  color: var(--text-sub);
+  margin-right: 0.2rem;
+}
+
+.stage-achievement .num-start {
+  font-size: 1.1rem;
+  color: var(--text-sub);
+  font-weight: 700;
+}
+
+.stage-achievement .arrow {
+  font-size: 1rem;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.stage-achievement .num-end {
+  font-size: 1.6rem;
+  color: var(--accent-color);
+  font-weight: 800;
+}
+
+.stage-desc {
+  font-size: 0.82rem;
+  color: var(--text-sub);
+  line-height: 1.5;
+}
+
+/* 課題・ミッションボックス */
+.target-mission-box {
+  background: linear-gradient(135deg, rgba(194, 65, 12, 0.04) 0%, rgba(234, 88, 12, 0.08) 100%);
+  border: 1px solid rgba(194, 65, 12, 0.15);
+  border-radius: 18px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.mission-badge {
+  font-family: var(--font-english);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--primary-color);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  position: absolute;
+  top: -11px;
+  left: 20px;
+}
+
+.mission-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  line-height: 1.5;
+  margin-top: 0.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.mission-text {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  line-height: 1.7;
+}
+
+.mission-text strong {
+  color: var(--accent-color);
+  font-weight: 700;
+}

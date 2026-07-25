@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>介護現場의 デジタル業務時短化 | 羽室 雄貴（はむこばのhamちゃん）</title>
+  <meta name="description" content="PC業務を時短化し、介護現場のリーダーが『はよ帰ろ。』と定時に帰れる仕組みを作ります。高額システム不要、今あるExcelをVBAで1クリック化・5秒に短縮する実践的な業務改善。">
+  
+  <!-- OGP設定 -->
+  <meta property="og:title" content="介護現場のデジタル業務時短化 | 羽室 雄貴">
+  <meta property="og:description" content="介護職者必見！今あるExcelを活用したPC業務の劇的時短化メソッド。">
+  <meta property="og:url" content="https://yuuki-hamchan.github.io/self_introduction_site/jitan.html">
+  <meta property="og:image" content="https://yuuki-hamchan.github.io/self_introduction_site/LP2.png">
+  <meta property="og:type" content="article">
+  
+  <!-- X（旧Twitter）用のカード設定 -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Orbitron:wght@500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 背景のネオンデジタル装飾用グラデーションサークル -->
+  <div class="bg-circles">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+  </div>
+
+  <main class="main-container">
+    <!-- メインに戻るナビゲーション -->
+    <div class="nav-back-container fade-in">
+      <a href="index.html" class="nav-back-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="back-icon">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        メインに戻る
+      </a>
+    </div>
+
+    <!-- 新しいファーストビュー（メインビジュアル） -->
+    <div class="main-visual fade-in">
+      <img src="LP2.png" alt="デジタル業務改善プロデューサー LP" class="main-visual-image">
+    </div>
+
+    <!-- お悩み提起セクション (Problem) -->
+    <section class="section problem-section fade-in delay-1">
+      <h2 class="section-title">お悩み</h2>
+      <p class="problem-lead">
+        現場のケアに集中したいのに、<br class="sp-only">PC作業で1日が終わっていませんか？
+      </p>
+      <div class="problem-container">
+        <p class="problem-intro">こんなお悩みを抱えていませんか？</p>
+        <ul class="problem-list">
+          <li class="problem-item">
+            <span class="problem-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <span class="problem-text">毎日、翌日の準備のために同じデータのコピー＆ペーストを繰り返している。</span>
+          </li>
+          <li class="problem-item">
+            <span class="problem-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <span class="problem-text">毎月の計画書や報告書の作成で、本来の業務が圧迫され残業が当たり前に。</span>
+          </li>
+          <li class="problem-item">
+            <span class="problem-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <span class="problem-text">「自分がやらなきゃ現場が回らない」と業務を抱え込み、休みの日も電話が鳴る。</span>
+          </li>
+          <li class="problem-item">
+            <span class="problem-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <span class="problem-text">新しいITシステムは高額で手が出ないし、覚える暇もない。</span>
+          </li>
+          <li class="problem-item">
+            <span class="problem-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <span class="problem-text">IT業者に頼もうにも、利用者の個人情報が多くて現状を説明しづらい。</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 共感・自己紹介セクション (Empathy Section) -->
+    <section class="section empathy-section fade-in delay-2">
+      <div class="empathy-container">
+        <div class="empathy-content">
+          <h3 class="empathy-title">痛いほどわかります。私も18年間、現場で泥水をすすってきた現役の管理者ですから。</h3>
+          <p class="empathy-text">
+            私は長年、施設管理者として24時間365日オンの状態で走り続けてきました。「一番早く来て、一番最後に帰る」のが当たり前だと思っていました。<br><br>
+            外部のシステムを入れてもうまく使いこなせない。そんな中、自分でExcelを工夫し、ボタン1つで時間が削減できる仕組みを作ったのが始まりです。<br><br>
+            <strong>「仕事も大事。利用者さんも大事。でも、あなたの30分も同じくらい大事」</strong><br><br>
+            私は、現場のリーダーが『はよ帰ろ。』と定時に帰れる仕組みを作りたいと決意し、現在の活動をスタートしました。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ヘッダーカード（名前と職業、プロフィールメッセージ） -->
+    <header class="profile-card fade-in delay-3">
+      <div class="profile-info">
+        <div class="role-badge">DIGITAL PRODUCTION</div>
+        <h1 class="profile-name" id="profile-name">羽室 雄貴</h1>
+        <p class="profile-nickname" id="profile-nickname">（活動名：はむこばのhamちゃん）</p>
+        <p class="profile-title" id="profile-job">介護特化型・デジタル業務改善プロデューサー</p>
+        <div class="profile-message" id="profile-message">
+          介護業界歴18年（うち複合施設管理者歴13年）。<br>
+          高額システムに頼らず、今あるExcelを「1クリック化」する実践的な時短術を得意とし、現場の残業削減と業務改善を支援している。<br><br>
+          ■ 主な活動実績<br>
+          ・<strong>現場改善</strong>： 自施設にて、毎日10分以上かかっていた手作業をExcel VBAで「ワンタッチ・5秒」に短縮。<br>
+          ・<strong>毎日発信</strong>： ブログ（note）にて、介護現場のリアルな悩みや解決メソッドを1年間、毎日休まず発信中。<br>
+          ・<strong>書籍出版</strong>： Amazon Kindleにて『はよ帰ろ。〜現場の中心にいる“頑張りすぎる介護職”が早く帰るための５つのステップ〜』を出版。
+        </div>
+      </div>
+      <div class="profile-image-wrapper">
+        <img src="homepage_image.PNG" alt="羽室 雄貴のプロフィール写真" class="profile-image" id="profile-img">
+      </div>
+    </header>
+
+    <!-- 解決策セクション (Solution) -->
+    <section class="section solution-section fade-in delay-4">
+      <h2 class="section-title">解決策</h2>
+      
+      <div class="solution-container">
+        <!-- キャッチコピー -->
+        <h3 class="solution-catchphrase">
+          高額なソフトは売りません。<br>今お使いの『Excel』を<span class="highlight-text">魔法のツール</span>に変えます！
+        </h3>
+        
+        <!-- リード文 -->
+        <p class="solution-intro-text">
+          私の解決策は、高額な新しいITシステムを導入することではありません。今お使いの『Excel』の機能を最大限に活用（VBA等）し、PC作業を<strong>「1クリック化」</strong>することです。
+        </p>
+
+        <!-- 時短実績カード -->
+        <div class="achievement-card">
+          <div class="achievement-badge">圧倒的な時短実績</div>
+          <p class="achievement-text">
+            実際に私の施設では、毎日手作業でコピペを繰り返していた利用者管理表をExcel VBAで自動化。
+          </p>
+          <div class="achievement-time-change">
+            <div class="time-before">
+              <span class="label">毎日手作業で</span>
+              <span class="time">15〜20分</span>
+            </div>
+            <div class="time-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+            <div class="time-after">
+              <span class="label">ボタン1つで</span>
+              <span class="time-highlight">たった5秒！</span>
+            </div>
+          </div>
+          <p class="achievement-subtext">作業時間が劇的に短縮されました！</p>
+        </div>
+
+        <!-- 3つの変化 -->
+        <div class="benefits-container">
+          <h4 class="benefits-title">導入で得られる3つの変化</h4>
+          
+          <div class="benefits-list">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <!-- 時計・時間のアイコン -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="benefit-body">
+                <h5 class="benefit-item-title">毎日30分の「余白」の創出</h5>
+                <p class="benefit-item-text">浮いた時間で子供とお風呂に入ったり、自分のための読書ができます。</p>
+              </div>
+            </div>
+
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <!-- チャット・会話のアイコン -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </div>
+              <div class="benefit-body">
+                <h5 class="benefit-item-title">専門用語がそのまま通じる</h5>
+                <p class="benefit-item-text">介護現場を熟知しているため、一般的なIT業者のようなイチからの説明は不要です。</p>
+              </div>
+            </div>
+
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <!-- 共有・チームワーク・人のアイコン -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div class="benefit-body">
+                <h5 class="benefit-item-title">「属人化」からの脱却</h5>
+                <p class="benefit-item-text">ボタンひとつで「誰でも・簡単に」作業できるようになり、あなた一人が抱え込む状況をなくします。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 提案セクション (Proposal) -->
+    <section class="section proposal-section fade-in delay-5">
+      <h2 class="section-title">ご提案</h2>
+      <div class="proposal-container">
+        <h3 class="proposal-catchphrase">
+          まずは無料の『PC作業お片付け診断』で、<br class="pc-only">あなたの30分を見つけましょう
+        </h3>
+        
+        <p class="proposal-lead">
+          「こんな小さな作業でもラクになる？」「どこから手をつければいいか分からない」
+        </p>
+        
+        <div class="proposal-card-content">
+          <p class="proposal-text">
+            そんな方のために、<strong>無料の「PC作業お片付け診断（約30分）」</strong>をご用意しました。
+          </p>
+          <p class="proposal-text">
+            オンラインで現在の画面を見せていただき、「ここ、こうすれば1発で終わりますよ」と、明日から使える時短のヒントを直接アドバイスいたします。
+          </p>
+        </div>
+
+        <div class="proposal-info-box warning-box">
+          <span class="info-icon">💡</span>
+          <p class="info-text">
+            ※高額なツールの押し売りや、無理な営業は一切いたしませんのでご安心ください。
+          </p>
+        </div>
+
+        <p class="proposal-extra-text">
+          もちろん、直接事業所様へ伺っての診断も可能です！
+        </p>
+
+        <div class="proposal-action">
+          <a href="https://lin.ee/uGoVAcD" target="_blank" rel="noopener noreferrer" class="proposal-btn">
+            <span class="btn-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 10.304c0-5.369-5.383-9.738-12-9.738s-12 4.369-12 9.738c0 4.814 4.269 8.846 10.036 9.586.39.084.922.258 1.057.592.12.3.078.769.038 1.073l-.168 1.02c-.05.304-.243 1.19 1.048.649 1.291-.541 6.965-4.095 9.497-7.009 2.015-2.27 2.492-4.529 2.492-5.911zm-15.53 2.894h-1.636a.375.375 0 0 1-.375-.375v-3.79a.375.375 0 0 1 .375-.375h1.636a.375.375 0 0 1 .375.375v.51a.375.375 0 0 1-.375.375H7.71v.864h1.02a.375.375 0 0 1 .375.375v.51a.375.375 0 0 1-.375.375H7.71v.88h1.272a.375.375 0 0 1 .375.375v.51a.375.375 0 0 1-.375.375zm4.845 0h-.515a.375.375 0 0 1-.375-.375v-2.21l-1.63-2.129a.377.377 0 0 1-.059-.208v-.515a.375.375 0 0 1 .536-.341l1.716 1.488 1.72-1.488a.375.375 0 0 1 .537.341v.515a.377.377 0 0 1-.06.208l-1.63 2.129v2.21a.375.375 0 0 1-.375.375zm3.822 0h-1.636a.375.375 0 0 1-.375-.375v-3.79a.375.375 0 0 1 .375-.375h1.636a.375.375 0 0 1 .375.375v.51a.375.375 0 0 1-.375.375h-1.12v.864h1.02a.375.375 0 0 1 .375.375v.51a.375.375 0 0 1-.375.375h-1.02v.88h1.272a.375.375 0 0 1 .375.375v.51a.375.375 0 0 1-.375.375zm4.07 0h-1.636a.375.375 0 0 1-.375-.375v-3.79a.375.375 0 0 1 .375-.375h1.636a.375.375 0 0 1 .375.375v.51a.375.375 0 0 1-.375.375h-1.12v3.28a.375.375 0 0 1-.375.375z"/>
+              </svg>
+            </span>
+            無料で「PC作業お片付け診断」を申し込む
+          </a>
+        </div>
+
+        <div class="proposal-limit-box">
+          <h4 class="limit-title">毎月【先着5名様】限定のご案内です</h4>
+          <p class="limit-text">
+            お一人おひとりの業務にしっかり寄り添い、丁寧なご提案をするために、無料診断をお受けできるのは毎月5名様までとさせていただいております。
+          </p>
+          <p class="limit-text limit-message">
+            「いつか楽になれば…」と先延ばしにしても、現場の時間は削られ続けるだけです。まずは第一歩を踏み出してみませんか？
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 中間のLINE誘導ボタン -->
+    <div class="middle-cta-section fade-in delay-5">
+      <p class="cta-sub-text">＼ 枠が埋まる前に、まずは第一歩を！ ／</p>
+      <div class="cta-action">
+        <a href="https://lin.ee/uGoVAcD" target="_blank" rel="noopener noreferrer" class="proposal-btn middle-cta-btn">
+          <span class="btn-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 10.304c0-5.369-5.383-9.738-12-9.738s-12 4.369-12 9.738c0 4.814 4.269 8.846 10.036 9.586.39.084.922.258 1.057.592.12.3.078.769.038 1.073l-.168 1.02c-.05.304-.243 1.19 1.048.649 1.291-.541 6.965-4.095 9.497-7.009 2.015-2.27 2.492-4.529 2.492-5.911zm-15.53 2.894h-1.636a.375.375 0 0 1-.375-.375v-3.79a.375.375 0 0 1 .375-.375h1.636a.375.375 0 0 1 .375.375v.51a.375.375 0 0 1-.375.375H7.71v.864h1.02a.375.375 0 0 1 .375.375v.51a.375.375 0 0 1-.375.375H7.71v.88h1.272a.375.375 0 0 1 .375.375v.51a.375.375 0 0 1-.375.375zm4.845 0h-.515a.375.375 0 0 1-.375-.375v-2.21l-1.63-2.129a.377.377 0 0 1-.059-.208v-.515a.375.375 0 0 1 .536-.341l1.716 1.488 1.72-1.488a.375.375 0 0 1 .537.341v.515a.377.377 0 0 1-.06.208l-1.63 2.129v2.21a.375.375 0 0 1-.375.375zm3.822 0h-1.636a.375.375 0 0 1-.375-.375v-3.79a.375.375 0 0 1 .375-.375h1.636a.375.375 0 0 1 .375.375v.51a.375.375 0 0 1-.375.375h-1.12v.864h1.02a.375.375 0 0 1 .375.375v.51a.375.375 0 0 1-.375.375h-1.02v.88h1.272a.375.375 0 0 1 .375.375v.51a.375.375 0 0 1-.375.375zm4.07 0h-1.636a.375.375 0 0 1-.375-.375v-3.79a.375.375 0 0 1 .375-.375h1.636a.375.375 0 0 1 .375.375v.51a.375.375 0 0 1-.375.375h-1.12v3.28a.375.375 0 0 1-.375.375z"/>
+            </svg>
+          </span>
+          毎月5名様限定！LINEで無料診断を申し込む
+        </a>
+      </div>
+    </div>
+
+    <!-- SNSセクション -->
+    <section class="section sns-section fade-in delay-5">
+      <h2 class="section-title">SNS & Links</h2>
+
+      <div class="sns-intro-container">
+        <div class="sns-intro-body">
+          <p class="sns-subtitle">はむこばのhamちゃんとして各メディアで発信中！</p>
+          <h3 class="sns-intro-title">hamちゃんの活動実績・発信メディア</h3>
+          <p class="sns-intro-text">
+            「本当にPC作業がラクになるの？」「どんな人がサポートしてくれるの？」<br>
+            もし少しでも気になった方は、これまでの活動記録をご覧ください。現場歴18年のリアルな経験や思考法を1年間毎日休まず発信し続けています！
+          </p>
+        </div>
+        <div class="sns-intro-image">
+          <img src="hamちゃん勇者.png" alt="hamちゃん勇者" class="sns-hero-image">
+        </div>
+      </div>
+
+      <p class="sns-lead">※カードをタップすると各外部サイト（別ウィンドウ）が開きます。</p>
+      <div class="sns-grid">
+        
+        <!-- note リンクカード -->
+        <a href="https://note.com/hamukoba_ham" target="_blank" rel="noopener noreferrer" class="sns-card" id="sns-note">
+          <div class="sns-icon">
+            <img src="notelogo.png" alt="note ロゴ">
+          </div>
+          <div class="sns-info">
+            <h3 class="sns-name">note</h3>
+            <p class="sns-desc">介護現場のデジタル業務改善に関する知見や、独立後の活動・想いなどを毎日発信しています。</p>
+          </div>
+          <div class="sns-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </div>
+        </a>
+
+        <!-- stand.fm リンクカード -->
+        <a href="https://stand.fm/channels/65d8b1ed53b400abe2d19268" target="_blank" rel="noopener noreferrer" class="sns-card" id="sns-standfm">
+          <div class="sns-icon">
+            <img src="stand.flogo.png" alt="stand.fm ロゴ">
+          </div>
+          <div class="sns-info">
+            <h3 class="sns-name">stand.fm</h3>
+            <p class="sns-desc">音声配信プラットフォームです。介護現場の裏話やデジタル業務改善のヒントを、毎週月曜日に音声でお届けしています。</p>
+          </div>
+          <div class="sns-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </div>
+        </a>
+
+        <!-- X (Twitter) リンクカード -->
+        <a href="https://x.com/ham_hamkoballc" target="_blank" rel="noopener noreferrer" class="sns-card" id="sns-x">
+          <div class="sns-icon">
+            <img src="logo-black.png" alt="X ロゴ">
+          </div>
+          <div class="sns-info">
+            <h3 class="sns-name">X (Twitter)</h3>
+            <p class="sns-desc">日常の気づきや介護現場のデジタル化に関する最新情報をリアルタイムで発信しています。お気軽にフォローしてください！</p>
+          </div>
+          <div class="sns-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </div>
+        </a>
+
+        <!-- 著書 リンクカード -->
+        <a href="https://amzn.asia/d/f8YSsXB" target="_blank" rel="noopener noreferrer" class="sns-card" id="sns-book">
+          <div class="sns-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>
+          </div>
+          <div class="sns-info">
+            <h3 class="sns-name">書籍「はよ帰ろ」</h3>
+            <p class="sns-desc">Amazon Kindleにて発売中の電子書籍です。介護現場で残業を減らし、自分時間を取り戻すためのヒントをまとめています。</p>
+          </div>
+          <div class="sns-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="main-footer fade-in delay-5">
+      <p class="copyright">&copy; 2026 Yuki Hamuro. Created with digital innovation.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
